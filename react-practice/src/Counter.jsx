@@ -8,10 +8,17 @@ const Counter = () => {
       console.log("counter");
         
        useEffect(()=>{
-        setInterval(()=>{
+        console.log("on mount");
+        let clock = setInterval(()=>{
+          console.log("from inside the server");
             setCount(c => c + 1)
-        }, 1000)
+        }, 1000) // this setInterval code only run once
         console.log("mounted");
+
+        return function(){
+            console.log("on unmount");
+          clearInterval(clock)
+        }
         
        }, [])  
 
