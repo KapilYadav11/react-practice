@@ -1,45 +1,22 @@
-import React from 'react'
-import PostComponent from './PostComponent'
-import ToggleMessage from './ToggleMessage'
-import Post from './Post'
+import { useEffect, useState } from "react"
+
 
 const App = () => {
 
-  function addPst() {
+  const [currentTab, setCurrentTab] = useState("feed")
 
-  }
+  useEffect(()=>{
+    console.log("sending data to current tab " + currentTab);
+    
+  }, [currentTab])
+  
   return (
-    <div>
-      {/* <ToggleMessage/> */}
-      <div style={{ backgroundColor: '#bdc3c7', height: '100vh' }}>
-        {/* <h1>Undestanding about the components </h1> */}
-        {/* <div style={{display: 'flex', justifyContent: 'center'}}>
-          <div>
-            <div> <PostComponent/></div>
-            <br />
-            <div> <PostComponent/></div>
-            <br />
-            <div> <PostComponent/></div>
-        </div>
-          
-          
-        </div> */}
-        <button onClick={addPst}>Add Post</button>
-        <div style={{ display: "flex", justifyContent: "center" }}>
-          <div>
-            <Post />
-            name={"Kapil"}
-            subtitle={"10 followers"}
-            time={"2m ago"}
-            image={"https://tse3.mm.bing.net/th/id/OIP.983RG0ClupsMjDufJ6oHlwHaHa?pid=Api&P=0&h=180"
-            }
-            description={"What to know how to win big? Check out these folks won $5000 in bounties"}
-fjf
-          </div>
-        </div>
-
-
-      </div>
+    <div style={{margin: 10, padding: 20, fontSize: 20}}>
+      <button  onClick={()=>setCurrentTab("feed")} style={{color: currentTab == "feed"? "red": "black"}}>feed</button>
+      <button  onClick={()=>setCurrentTab("message")}style={{color: currentTab == "message"? "red": "black"}}>message</button>
+      <button  onClick={()=>setCurrentTab("jobs")} style={{color: currentTab == "jobs"? "red": "black"}}>jobs</button>
+      <button  onClick={()=>setCurrentTab("notification")} style={{color: currentTab == "notification"? "red": "black"}}>notification</button>
+      <button  onClick={()=>setCurrentTab("contact")} style={{color: currentTab == "contact"? "red": "black"}}>contact</button>
     </div>
   )
 }
