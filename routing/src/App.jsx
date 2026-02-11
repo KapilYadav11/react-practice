@@ -7,7 +7,7 @@ const App = () => {
       <Link to={"/neet/online-coaching-class-11"}>Class11</Link> <br/>
       <Link to={"/neet/online-coaching-class-12"}>Class12</Link> <br/>
        <Routes>
-        <Route path="/neet/online-coaching-class-11" element={<Class11Program/>}/>
+        <Route path="/neet/online-coaching-class-10" element={<Class11Program/>}/>
         <Route path="/neet/online-coaching-class-12" element={<Class12Program/>}/>
         <Route path="/" element={<LandingPage/>}/>
         <Route path="*" element={<Errorpage/>}/>
